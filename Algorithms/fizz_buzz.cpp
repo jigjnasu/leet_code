@@ -1,5 +1,5 @@
 /*
-  Solution for Two Sum
+  Solution for Fizz Buzz
   Author: cpp.rakesh@gmail.com
   Date: Nov 18th, 2016
 */
