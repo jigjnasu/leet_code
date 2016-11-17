@@ -4,6 +4,8 @@
   Date: Nov 18th, 2016
 */
 
+#include <cstdio>
+
 class Solution {
 public:
     double myPow(double x, int n) {
@@ -18,3 +20,11 @@ public:
         }
     }
 };
+
+
+int main() {
+    Solution s;
+    printf("power == [%f]\n", s.myPow(2, -2));
+    
+    return 0;
+}
