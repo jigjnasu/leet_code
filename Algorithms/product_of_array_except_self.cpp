@@ -11,7 +11,6 @@ class Solution {
 public:
 
     std::vector<int> productExceptSelf(std::vector<int>& nums) {
-        print(nums);
         std::vector<int> result;
         result.push_back(1);
         
