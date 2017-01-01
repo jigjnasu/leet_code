@@ -19,11 +19,7 @@ public:
             while (i < j && !m_is_vowel(s[j]))
                 --j;
 
-            const char t = s[i];
-            s[i] = s[j];
-            s[j] = t;
-            ++i;
-            --j;
+            m_swap(s[i++], s[j--]);
         }
         
         return s;
@@ -37,6 +33,12 @@ private:
             result = true;
 
         return result;
+    }
+
+    void m_swap(char& a, char &b) const {
+        const char t = a;
+        a = b;
+        b = t;
     }
 };
 
