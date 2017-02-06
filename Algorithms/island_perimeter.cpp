@@ -1,5 +1,5 @@
 /*
-  Solution for Reverse String
+  Solution for Island Perimeter
   Author: cpp.rakesh@gmail.com
   Date: Feb 7th 18th, 2017
 */
