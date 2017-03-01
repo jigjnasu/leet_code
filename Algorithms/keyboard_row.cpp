@@ -1,85 +1,49 @@
-
 /*
-  Solution for Keyboard row  
-  Author: cpp.rakesh@gmail.com
-  Date: Feb 28th 18th, 2017
-*/
+  Solution for Keyboard Row from Leet Code
+  Rakesh Kumar @ cpp.rakesh@gmail.com
+  Date: March 1st, Nov 2017
+ */
 
 #include <cstdio>
 #include <string>
 #include <vector>
-#include <map>
 
-const std::vector<std::string> keyboard = {"EIOPQRTUWYeiopqrtuwy",
-                                           "ADFGHJKLSadfghjkls",
-                                           "BCMNVXZbcmnvxz"};
+const std::vector<std::string> keyboard = {"QWERTYUIOP",
+                                           "ASDFGHJKL",
+                                           "ZXCVBNM"};
 
 class Solution {
 public:
+    Solution() {
+        for (std::size_t i = 0; i < keyboard.size(); ++i) {
+            m_dictionary[i] = 0;
+            for (std::size_t j = 0; j < keyboard[i].size(); ++j)
+                m_dictionary[i] += 1 << (keyboard[i][j] - 'A');
+        }
+    }
+
     std::vector<std::string> findWords(const std::vector<std::string>& words) {
         std::vector<std::string> result;
         for (std::size_t i = 0; i < words.size(); ++i)
-            if (words[i].size() == 1)
+            if (m_is_keyboard_row(words[i]))
                 result.push_back(words[i]);
-            else if (m_find_in_keyboard(words[i]))
-                result.push_back(words[i]);
-
         return result;
     }
 
 private:
-    bool m_find_in_keyboard(const std::string& word) {
-        std::map<char, int> dictionary;
+    std::size_t m_dictionary[3];
+
+    bool m_is_keyboard_row(const std::string& word) {
         for (std::size_t i = 0; i < keyboard.size(); ++i) {
-            if (m_search(i, word[0])) {
-                dictionary[word[0]] = 1;
-                int j = 1;
-                while (j < word.size() - 1) {
-                    if (dictionary[word[j]] != 1) {
-                        if (m_search(i, word[j]))
-                            dictionary[word[j]] = 1;
-                        else
-                            return false;
-
-                    }
-                    ++j;
-                }
-
-                if (dictionary[word[j]]) {
-                    return true;
-                } else {
-                    if (m_search(i, word[j]))
-                        return true;
-                    else
-                        return false;
-                }
+            std::size_t mask = 0;
+            for (std::size_t j = 0; j < word.size(); ++j) {
+                mask = (1 << std::toupper(word[j]) - 'A') & m_dictionary[i];
+                if (mask == 0)
+                    break;
             }
-        }
-
-        return true;
-    }
-
-    bool m_search(std::size_t pos, char c) {
-        int start = 0;
-        int end = keyboard[pos].size() - 1;
-
-        while (start <= end) {
-            if (c == keyboard[pos][start])
+            
+            if (mask)
                 return true;
-            if (c == keyboard[pos][end])
-                return true;
-
-            const int mid = (start + end) >> 1;
-
-            if (c == keyboard[pos][mid]) {
-                return true;
-            } else if (c < keyboard[pos][mid]){
-                ++start;
-                end = mid - 1;
-            } else {
-                start = mid + 1;
-                --end;
-            }
         }
 
         return false;
@@ -87,9 +51,8 @@ private:
 };
 
 int main() {
+    std::vector<std::string> words = {"Alaska", "Hello", "Rakesh", "Peace", "Dada", "QoeiuWieroQEEEW"};
     Solution solution;
-    std::vector<std::string> words = {"Qwee", "Alaska", "Dad", "a", "Hello"};
-
     const std::vector<std::string> result = solution.findWords(words);
 
     for (std::size_t i = 0; i < result.size(); ++i)
