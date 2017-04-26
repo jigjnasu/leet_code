@@ -1,8 +1,8 @@
 /*
   LeetCode.com
   Solution for Contains Duplicate.
-  Rakesh Kumar @ cpp.rakesh@gmail.com
-  Date: Nov 18th, 2016
+  Rakesh Kumar @ cpp.rakesh(at)gmail.com
+  Date: 26/04/2017
 */
 
 #include <cstdio>
