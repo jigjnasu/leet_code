@@ -22,10 +22,7 @@ public:
             }
         }
 
-        if (type < (candies.size() >> 1))
-            return type;
-        else
-            return candies.size() >> 1;
+        return min(type, static_cast<int>(candies.size() >> 1));
     }
 };
 
