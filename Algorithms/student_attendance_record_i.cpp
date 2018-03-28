@@ -15,18 +15,14 @@ public:
         int l = 0;
         int a = 0;
         for (size_t i = 0; i < s.size(); ++i) {
-            if (s[i] == 'A') {
+            if (s[i] == 'A')
                 ++a;
-                l = 0;
-            } else if (s[i] == 'L') {
+            if (s[i] == 'L')
                 ++l;
-            } else {
+            else
                 l = 0;
-            }
 
-            if (a > 1)
-                return false;
-            if (l > 2)
+            if (l > 2 || a > 1)
                 return false;
         }
 
