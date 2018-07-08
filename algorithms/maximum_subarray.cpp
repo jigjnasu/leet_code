@@ -8,16 +8,19 @@
 #include <cstdio>
 #include <vector>
 #include <cstdlib>
+#include <random>
 
 int random(int min, int max) {
-    return min + rand() % (max - min + 1);
+    std::random_device rd;
+    std::uniform_int_distribution<> dt(min, max);
+    return dt(rd);
 }
 
 void print(const std::vector<int>& nums) {
     printf("----------------------------------------------------\n");
     for (std::size_t i = 0; i < nums.size(); ++i)
         printf("%d ", nums[i]);
-    printf("\n----------------------------------------------------\n");    
+    printf("\n----------------------------------------------------\n");
 }
 
 // Divide and conquer algorithm to find the maximum subarray.
@@ -36,7 +39,7 @@ private:
             const int left_sum  = m_maxSubArray(start, mid, nums);
             const int right_sum = m_maxSubArray(mid + 1, end, nums);
             const int cross_sum = m_maxSubArrayCross(start, mid, end, nums);
-            
+
             return m_max(m_max(left_sum, right_sum), cross_sum);
         }
     }
@@ -76,6 +79,6 @@ int main() {
     Solution solution;
     print(nums);
     printf("Maximum sum of subarray == [%d]\n", solution.maxSubArray(nums));
-    
+
     return 0;
 }
