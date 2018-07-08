@@ -8,6 +8,7 @@
 #include <cstdio>
 #include <vector>
 #include <cstdlib>
+#include <random>
 
 class Solution {
 public:
@@ -48,7 +49,9 @@ private:
     int m_get_random_number() const {
         const int min = 0;
         const int max = 10000000;
-        return min + rand() % (max - min) + 1;
+        std::random_device rd;
+        std::uniform_int_distribution<> dt(min, max);
+        return dt(rd);
     }
 };
 
@@ -65,6 +68,6 @@ int main() {
         s.print(number);
         printf("\n----------------------------------------\n");
     }
-    
+
     return 0;
 }
