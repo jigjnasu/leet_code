@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <string>
 #include <sstream>
+#include <random>
 
 const std::string hex_values = "0123456789abcdef";
 
@@ -17,7 +18,7 @@ public:
     std::string toHex(int num) {
         if (num == 0)
             return "0";
-        
+
         std::string str_num;
         while (num && str_num.size() <= 8) {
             str_num.insert(str_num.begin(), hex_values[num & 15]);
@@ -42,7 +43,9 @@ public:
     }
 
     int random(int min, int max) const {
-        return min + rand() % (max - min) + 1;
+        std::random_device rd;
+        std::uniform_int_distribution<> dt(min, max);
+        return dt(rd);
     }
 };
 
