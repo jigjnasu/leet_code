@@ -7,6 +7,7 @@
 
 #include <cstdio>
 #include <cstdlib>
+#include <random>
 
 class Solution {
 public:
@@ -21,7 +22,9 @@ int random_number() {
     const int min = 0;
     const int max = 1000000;
 
-    return min + rand() % (max - min) + 1;
+    std::random_device rd;
+    std::uniform_int_distribution<> dt(min, max);
+    return dt(rd);
 }
 
 int main() {
