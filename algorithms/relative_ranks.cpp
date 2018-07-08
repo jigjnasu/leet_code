@@ -8,6 +8,7 @@
 #include <vector>
 #include <string>
 #include <cstdlib>
+#include <random>
 
 class Solution {
 public:
@@ -20,7 +21,7 @@ public:
 
         const std::size_t size = nums.size();
         std::vector<std::string> ranks(nums.size(), "");
-        
+
         for (std::size_t i = 0; i < nums.size(); ++i) {
             if (i == 0)
                 ranks[pos[i]] = "Gold Medal";
@@ -31,7 +32,7 @@ public:
             else
                 ranks[pos[i]] = std::to_string(i + 1);
         }
-            
+
         return ranks;
     }
 
@@ -65,7 +66,9 @@ private:
     }
 
     int m_random(int min, int max) const {
-        return min + rand() % (max - min + 1);
+        std::random_device rd;
+        std::uniform_int_distribution<> dt(min, max);
+        return dt(rd);
     }
 
     void m_swap(int& a, int& b) const {
