@@ -22,7 +22,7 @@ int main() {
     printf("%d\n", solution.firstUniqChar(a));
 
     const std::string b = "loveleetcode";
-    printf("%d\n", solution.firstUniqChar(b));    
+    printf("%d\n", solution.firstUniqChar(b));
 
     return 0;
 }
