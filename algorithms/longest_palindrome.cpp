@@ -23,6 +23,6 @@ public:
 int main() {
     Solution sol;
     printf("%d\n", sol.longestPalindrome("abccccdd"));
-    
+
     return 0;
 }
