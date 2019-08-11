@@ -1,3 +1,10 @@
+/*
+  LeetCode.com
+  Solution for Squares of a sorted array
+  Rakesh Kumar @ cpp.rakesh(at)gmail.com
+  Date: 12/08/2019
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;
