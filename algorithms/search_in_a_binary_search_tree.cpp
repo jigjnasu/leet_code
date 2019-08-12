@@ -1,5 +1,3 @@
-#include <bits/stdc++.h>
-
 /*
   LeetCode.com
   Solution for Search in a binary tree
@@ -16,6 +14,8 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
+#include <bits/stdc++.h>
 
 using namespace std;
 
