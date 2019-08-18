@@ -11,12 +11,14 @@
 class Solution {
 public:
     int hammingDistance(int x, int y) {
-        int count = 0;
-        for (int i = 0; i < 32; ++i)
-            if (((1 << i) & x) != ((1 << i) & y))
-                ++count;
+        int t = x ^ y;
+        int r = 0;
+        while (t > 0) {
+            r+= t & 1;
+            t >>= 1;
+        }
 
-        return count;
+        return r;
     }
 };
 
@@ -25,6 +27,6 @@ int main() {
     const int x = 7;
     const int y = 15;
     printf("Hamming distance between [%d] and [%d] == [%d]\n", x, y, s.hammingDistance(x, y));
-    
+
     return 0;
 }
