@@ -1,3 +1,10 @@
+/*
+  LeetCode.com
+  Solution for Find numbers with even number of digits
+  Rakesh Kumar @ cpp.rakesh@gmail.com
+  Date: 02/01/2020
+ */
+
 #include <bits/stdc++.h>
 
 class Solution {
