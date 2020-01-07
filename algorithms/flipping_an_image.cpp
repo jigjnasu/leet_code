@@ -9,11 +9,13 @@
 using V = std::vector<std::vector<int>>;
 
 inline void print(const V& A) {
+    printf("---------------------------------\n");
     for (std::vector<int> R : A) {
         for (int e : R)
             printf("%8d ", e);
         printf("\n");
     }
+    printf("---------------------------------\n");
 }
 
 inline void swap(int& a, int& b) {
@@ -36,7 +38,7 @@ public:
         // Let's flip everything
         for (std::size_t r = 0; r < A.size(); ++r) {
             for (std::size_t c = 0; c < A[r].size(); ++c)
-                A[r][c] ^= 0;
+                A[r][c] ^= 1;
         }
         return A;
     }
@@ -50,6 +52,13 @@ int main() {
 
     Solution s;
     V r = s.flipAndInvertImage(v);
+    print(r);
+
+    v = { {1, 1, 0, 0},
+          {1, 0, 0, 1},
+          {0, 1, 1, 1},
+          {1, 0, 1, 0} };
+    r = s.flipAndInvertImage(v);
     print(r);
 
     return 0;
