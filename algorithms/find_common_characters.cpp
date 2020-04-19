@@ -10,25 +10,23 @@
 class Solution {
 public:
     std::vector<std::string> commonChars(std::vector<std::string>& arr) {
-        std::vector<std::vector<int>> d(arr.size(), std::vector<int>(26, 0));
+        int d[26] = {0};
+        for (char c : arr[0])
+            ++d[c - 'a'];
 
-        int i = 0;
-        for (const std::string& s : arr) {
-            for (char c : s)
-                ++d[i][c - 'a'];
-            ++i;
+        for (std::size_t i = 1; i < arr.size(); ++i) {
+            int t[26] = {0};
+            for (char c : arr[i])
+                ++t[c - 'a'];
+            for (int j = 0; j < 26; ++j)
+                d[j] = std::min(d[j], t[j]);
         }
 
         std::vector<std::string> r;
         for (int i = 0; i < 26; ++i) {
-            int m = arr[0].size();
-            for (std::vector<int> v : d) {
-                m = std::min(m, v[i]);
-            }
-
-            for (int j = 0; j < m; ++j) {
+            for (int j = 0; j < d[i]; ++j) {
                 std::string s;
-                s += 'a' + i;
+                s = 'a' + i;
                 r.push_back(s);
             }
         }
