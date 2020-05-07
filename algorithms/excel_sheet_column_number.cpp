@@ -15,9 +15,9 @@ public:
     int titleToNumber(std::string s) {
         int number = 0;
         int index = 0;
-        for (int i = s.size() - 1; i >= 0; --i) 
+        for (int i = s.size() - 1; i >= 0; --i)
             number += std::pow(26, index++) * ((s[i] - 'A') + 1);
-        
+
         return number;
     }
 };
@@ -28,12 +28,12 @@ int main() {
     printf("[%8d] for [%s]\n", s.titleToNumber(number), number.c_str());
     number = "Z";
     printf("[%8d] for [%s]\n", s.titleToNumber(number), number.c_str());
-    number = "DZ";    
+    number = "DZ";
     printf("[%8d] for [%s]\n", s.titleToNumber(number), number.c_str());
-    number = "AAD";    
+    number = "AAD";
     printf("[%8d] for [%s]\n", s.titleToNumber(number), number.c_str());
-    number = "ZDEA";    
-    printf("[%8d] for [%s]\n", s.titleToNumber(number), number.c_str());    
+    number = "ZDEA";
+    printf("[%8d] for [%s]\n", s.titleToNumber(number), number.c_str());
 
     return 0;
 }
