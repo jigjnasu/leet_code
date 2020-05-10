@@ -1,7 +1,8 @@
 /*
-  Solution for Counting Bits
+  Problem Number: 338
+  Problem: Counting Bits
   Author: cpp.rakesh@gmail.com
-  14/07/2017
+  Date: 14/07/2017
 */
 
 #include <cstdio>
