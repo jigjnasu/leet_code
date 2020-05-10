@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Convert a Number to Hexadecimal
+  Problem Number: 405
+  Problem: Convert a Number to Hexadecimal
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: Dec 29th, 2016
  */
