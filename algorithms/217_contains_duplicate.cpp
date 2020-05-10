@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Contains Duplicate.
+  Problem Number: 217
+  Problem: Contains Duplicate.
   Rakesh Kumar @ cpp.rakesh(at)gmail.com
   Date: 26/04/2017
 */
