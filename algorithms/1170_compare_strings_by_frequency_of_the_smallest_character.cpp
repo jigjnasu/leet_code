@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for compare strings by frequency of the smallest character
+  Problem Number: 1170
+  Problem: Compare strings by frequency of the smallest character
   Rakesh Kumar @ cpp.rakesh(at)gmail.com
   Date: 03/09/2019
 */
