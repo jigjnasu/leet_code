@@ -1,5 +1,6 @@
 /*
-  Solution for Flipping an image
+  Problem No: 832
+  Problem: Flipping an image
   Author: cpp.rakesh@gmail.com
   07/01/2020
 */
