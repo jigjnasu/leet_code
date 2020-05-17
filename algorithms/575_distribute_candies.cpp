@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Distribute Candies
+  Problem No: 575
+  Problem: Distribute Candies
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: 10/03/2018
  */
