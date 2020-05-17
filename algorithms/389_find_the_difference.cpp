@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Find the Difference
+  Problem No: 389
+  Problem: Find the Difference
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: Nov 18th, 2016
  */
