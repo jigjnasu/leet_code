@@ -1,5 +1,6 @@
 /*
-  Solution for Elimination game
+  Problem No: 390
+  Problem: Elimination game
   Author: cpp.rakesh@gmail.com
   09/08/2019
 */
