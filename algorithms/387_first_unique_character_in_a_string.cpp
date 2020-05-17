@@ -1,3 +1,11 @@
+/*
+  LeetCode.com
+  Problem Number: 387
+  Problem: first unique character in a string
+  Rakesh Kumar @ cpp.rakesh@gmail.com
+  Date: 18/05/2020
+ */
+
 #include <cstdio>
 #include <string>
 
