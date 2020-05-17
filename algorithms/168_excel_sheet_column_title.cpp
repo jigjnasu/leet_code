@@ -1,5 +1,6 @@
 /*
-  Solution for Excel Sheet Column Title
+  Problem No: 168
+  Problem: Excel Sheet Column Title
   Author: cpp.rakesh@gmail.com
   13/07/2017
 */
