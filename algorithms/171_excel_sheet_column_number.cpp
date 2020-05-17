@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Excel Sheet Column Number
+  Problem No: 171
+  Problem: Excel Sheet Column Number
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: Nov 18th, 2016
  */
