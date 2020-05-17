@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Decompress run length encoded list
+  Problem No: 1313
+  Problem: Decompress run length encoded list
   Rakesh Kumar @ cpp.rakesh(at)gmail.com
   Date: 20/04/2020
 */
