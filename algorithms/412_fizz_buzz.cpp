@@ -1,5 +1,6 @@
 /*
-  Solution for Fizz Buzz
+  Problem No: 412
+  Problem: Fizz Buzz
   Author: cpp.rakesh@gmail.com
   Date: Nov 18th, 2016
 */
