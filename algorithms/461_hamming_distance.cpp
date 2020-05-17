@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Hamming Distancd
+  Problem No: 461
+  Problem: Hamming Distancd
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: Nov 28th, 2016
  */
