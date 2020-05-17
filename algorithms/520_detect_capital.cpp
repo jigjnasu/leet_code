@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Detect Capital
+  Problem No: 520
+  Problem: Detect Capital
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: March 8th, 2017
 */
@@ -37,11 +38,11 @@ public:
 
 int main() {
     Solution sol;
-    
+
     printf("[%d]\n", sol.detectCapitalUse("Rakesh"));
     printf("[%d]\n", sol.detectCapitalUse("rakesh"));
     printf("[%d]\n", sol.detectCapitalUse("RAKESH"));
-    printf("[%d]\n", sol.detectCapitalUse("RakesH"));    
-    
+    printf("[%d]\n", sol.detectCapitalUse("RakesH"));
+
     return 0;
 }
