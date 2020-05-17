@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Find common characters
+  Problem No: 1002
+  Problem: Find common characters
   Rakesh Kumar @ cpp.rakesh at gmail.com
   Date: 20/04/2020
 */
