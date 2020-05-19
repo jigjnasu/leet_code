@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Maximum number of ballons
+  Problem No: 1189
+  Problem: Maximum number of ballons
   Rakesh Kumar @ cpp.rakesh(at)gmail.com
   Date: 20/04/2020
 */
