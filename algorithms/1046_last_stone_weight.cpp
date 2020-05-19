@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Last stone weight
+  Problem No: 1046
+  Problem: Last stone weight
   Rakesh Kumar @ cpp.rakesh at gmail.com
   Date: 20/04/2020
 */
