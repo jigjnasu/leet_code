@@ -1,5 +1,7 @@
 /*
-  Solution for Number of 1 Bits
+  Leetcode.com
+  Problem No: 191
+  Problem: Number of 1 Bits
   Author: cpp.rakesh@gmail.com
   Date: Nov 18th, 2016
 */
