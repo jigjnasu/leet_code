@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Next Greater Element I
+  Problem No: 496
+  Problem: Next Greater Element I
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: 10/03/2018
  */
