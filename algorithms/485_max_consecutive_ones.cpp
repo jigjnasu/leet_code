@@ -1,3 +1,11 @@
+/*
+  LeetCode.com
+  Problem No: 485
+  Problem: Max consecutive ones
+  Rakesh Kumar @ cpp.rakesh@gmail.com
+  Date: 20/05/2020
+ */
+
 #include <cstdio>
 #include <vector>
 
@@ -17,7 +25,7 @@ public:
                 ++j;
             i = j;
         }
-        
+
         return max;
     }
 };
