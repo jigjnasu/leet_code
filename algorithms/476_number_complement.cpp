@@ -1,5 +1,7 @@
 /*
-  Solution for Number Complement 
+  Leetcode.com
+  Problem No: 476
+  Problem: Number Complement
   Author: cpp.rakesh@gmail.com
   Date: Feb 7th 18th, 2017
 */
@@ -13,7 +15,7 @@ public:
 
         while (n & mask)
             mask <<= 1;
-        
+
         return ~n & ~mask;
     }
 };
