@@ -1,5 +1,6 @@
 /*
-  Solution for Is subsequence
+  Problem No: 392
+  Problem: Is subsequence
   Author: cpp.rakesh@gmail.com
   Date: 09/08/2019
 */
