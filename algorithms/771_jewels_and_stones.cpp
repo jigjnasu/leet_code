@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Jewels and Stones
+  Problem No: 771
+  Problem: Jewels and Stones
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: 10/03/2018
  */
