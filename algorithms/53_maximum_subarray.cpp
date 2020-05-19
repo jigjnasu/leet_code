@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Maximum Subarray.
+  Problem: 53
+  Problem: Maximum Subarray.
   Rakesh Kumar @ cpp.rakesh(at)gmail.com
   Date: 26/04/2017
 */
