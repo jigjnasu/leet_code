@@ -1,5 +1,6 @@
 /*
-  Solution for Keyboard Row from Leet Code
+  Problem No: 500
+  Problem: Keyboard Row from Leet Code
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: March 1st, Nov 2017
  */
@@ -41,7 +42,7 @@ private:
                 if (mask == 0)
                     break;
             }
-            
+
             if (mask)
                 return true;
         }
@@ -57,6 +58,6 @@ int main() {
 
     for (std::size_t i = 0; i < result.size(); ++i)
         printf("%s\n", result[i].c_str());
-    
+
     return 0;
 }
