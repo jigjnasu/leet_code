@@ -1,5 +1,7 @@
 /*
-  Solution for Nim Game from Leet Code.
+  Leetcode.com
+  Problem No: 292
+  Problem: Nim Game
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: 18th, Nov, 2016
  */
@@ -20,6 +22,6 @@ int main() {
     Solution s;
     for (int i = 1; i < 25; ++i)
         printf("n == [%d] win == [%s]\n", i, s.canWin(i) ? "Yes" : "No");
-    
+
     return 0;
 }
