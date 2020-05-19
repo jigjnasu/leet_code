@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Majority Element.
+  Problem No: 169
+  Problem: Majority Element.
   Rakesh Kumar @ cpp.rakesh(at)gmail.com
   Date: 26/04/2017
 */
