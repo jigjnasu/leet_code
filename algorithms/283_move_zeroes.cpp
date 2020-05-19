@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Move Zeroes
+  Problem No: 283
+  Problem: Move Zeroes
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: Nov 18th, 2016
  */
@@ -21,7 +22,7 @@ public:
         printf("----------------------------------------------\n");
         for (std::size_t i = 0; i < V.size(); ++i)
             printf("%d ", V[i]);
-        printf("\n----------------------------------------------\n");        
+        printf("\n----------------------------------------------\n");
     }
 
 private:
@@ -40,6 +41,6 @@ int main() {
     s.print(V);
     s.moveZeroes(V);
     s.print(V);
-    
+
     return 0;
 }
