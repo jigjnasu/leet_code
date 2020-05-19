@@ -1,5 +1,7 @@
 /*
-  Solution for Nth tribonacci number
+  Leetcode.com
+  Problem No: 1137
+  Problem: Nth tribonacci number
   Author: cpp.rakesh@gmail.com
   Date: 08/08/2019
 */
