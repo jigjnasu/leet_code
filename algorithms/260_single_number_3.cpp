@@ -1,5 +1,7 @@
 /*
-  Solution for Single Number III
+  Leetcode.com
+  Problem No: 260
+  Problem: Single Number III
   Author: cpp.rakesh@gmail.com
   14/07/2017
 */
@@ -32,6 +34,6 @@ int main() {
     std::vector<int> n = {1, 2, 1, 3, 2, 5};
     const std::vector<int> r = s.singleNumber(n);
     printf("%d %d\n", r[0], r[1]);
-    
+
     return 0;
 }
