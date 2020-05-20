@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Sum Of Two Integers
+  Problem No: 371
+  Problem: Sum Of Two Integers
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: Nov 18th, 2016
  */
