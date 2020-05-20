@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Valid Anagram
+  Problem No: 242
+  Problem: Valid Anagram
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: Nov 18th, 2016
  */
@@ -37,6 +38,6 @@ int main() {
         printf("[%s] and [%s] are Anagrams\n", a.c_str(), b.c_str());
     else
         printf("[%s] and [%s] are NOT Anagrams\n", a.c_str(), b.c_str());
-    
+
     return 0;
 }
