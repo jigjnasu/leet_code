@@ -1,5 +1,7 @@
 /*
-  Solution for Single Number III
+  Leetcode.com
+  Problem No: 540
+  Problem: Single Number III
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: 14/07/2017
 */
