@@ -1,5 +1,7 @@
 /*
-  Solution for Reverse of a String from LeetCode.com
+  Leetcode.com
+  Problem No: 345
+  Problem: Reverse of a String
   Author: Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: Jan 2nd, 2017
 */
@@ -21,7 +23,7 @@ public:
 
             m_swap(s[i++], s[j--]);
         }
-        
+
         return s;
     }
 
@@ -46,7 +48,7 @@ int main() {
     Solution sol;
     std::string s = "HansRajModelSchoolPunjabiBaghNewDelhi";
     printf("%s\n", s.c_str());
-    printf("%s\n", sol.reverseVowels(s).c_str());    
-    
+    printf("%s\n", sol.reverseVowels(s).c_str());
+
     return 0;
 }
