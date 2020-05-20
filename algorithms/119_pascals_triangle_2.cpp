@@ -1,5 +1,7 @@
 /*
-  Solution for Pascal's Triangle II
+  Leetcode.com
+  Problem No: 119
+  Problem: Pascal's Triangle II
   Author: cpp.rakesh@gmail.com
   14/07/2017
 */
@@ -28,6 +30,6 @@ int main() {
     for (std::size_t i = 0; i < row.size(); ++i)
         printf("%d ", row[i]);
     printf("\n");
-    
+
     return 0;
 }
