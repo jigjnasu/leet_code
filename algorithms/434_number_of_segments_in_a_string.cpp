@@ -1,5 +1,7 @@
 /*
-  Solution for Number of Segments in a String
+  Leetcode.com
+  Problem No: 434
+  Problem: Number of Segments in a String
   Author: cpp.rakesh@gmail.com
   14/07/2017
 */
