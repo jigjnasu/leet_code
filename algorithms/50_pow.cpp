@@ -1,5 +1,6 @@
 /*
-  Solution for Two Sum
+  Leetcode.com
+  Problem: Two Sum
   Author: cpp.rakesh@gmail.com
   Date: Nov 18th, 2016
 */
@@ -25,6 +26,6 @@ public:
 int main() {
     Solution s;
     printf("power == [%f]\n", s.myPow(2, -2));
-    
+
     return 0;
 }
