@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Valid Parentheses
+  Problem No: 551
+  Problem: Valid Parentheses
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: 29/03/2018
  */
