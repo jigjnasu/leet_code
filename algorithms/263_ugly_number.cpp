@@ -1,5 +1,7 @@
 /*
-  Solution for Ugly Number
+  Leetcode.com
+  Problem No: 263
+  Problem: Ugly Number
   Author: cpp.rakesh@gmail.com
   10/07/2017
 */
