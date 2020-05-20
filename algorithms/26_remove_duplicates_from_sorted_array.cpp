@@ -1,5 +1,7 @@
 /*
-  Solution for Remove Duplicates from Sorted Array.
+  Leetcode.com
+  Problem No: 26
+  Problem: Remove Duplicates from Sorted Array.
   Author : cpp.rakesh@gmail.com
   Date: Sep 3rd, 2016
 */
@@ -15,7 +17,7 @@ public:
         int i = 0;
         for (std::size_t j = 1; j < nums.size(); ++j) {
             if (nums[j] != nums[i]) {
-                ++i;				
+                ++i;
                 nums[i] = nums[j];
             }
         }
@@ -30,15 +32,15 @@ int main() {
     printf("-----------------------------------------------------------\n");
     for (std::size_t i = 0; i < V.size(); ++i)
         printf("%d ", V[i]);
-    printf("\n-----------------------------------------------------------\n");    
-    
+    printf("\n-----------------------------------------------------------\n");
+
     Solution s;
     const int size = s.removeDuplicates(V);
 
     printf("-----------------------------------------------------------\n");
     for (int i = 0; i < size - 1; ++i)
         printf("%d ", V[i]);
-    printf("\n-----------------------------------------------------------\n");    
-    
+    printf("\n-----------------------------------------------------------\n");
+
     return 0;
 }
