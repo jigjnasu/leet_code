@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Power Of Three
+  Problem No: 326
+  Problem: Power Of Three
   Rakesh Kumar, cpp-rakesh(at)gmail.com
   Date: Jan 17th, 2017
  */
@@ -16,8 +17,6 @@ public:
             return false;
         return (static_cast<int>(std::pow(3, 19)) % n) == 0;
     }
-
-    
 };
 
 int main() {
