@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Search in a binary tree
+  Problem No: 700
+  Problem: Search in a binary tree
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: 13/08/2019
  */
