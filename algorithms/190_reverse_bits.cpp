@@ -1,5 +1,7 @@
 /*
-  Solution for Reverse Bits
+  Leetcode.com
+  Problem No: 190
+  Problem: Reverse Bits
   Author: cpp.rakesh@gmail.com
   11/07/2017
 */
