@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Plus One
+  Problem No: 66
+  Problem: Plus One
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: Nov 18th, 2016
  */
