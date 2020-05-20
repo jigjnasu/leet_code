@@ -1,5 +1,7 @@
 /*
-  Solution for Relative Ranks
+  Leetcode.com
+  Problem No: 506
+  Problem: Relative Ranks
   Author: cpp.rakesh@gmail.com
   14/07/2017
 */
