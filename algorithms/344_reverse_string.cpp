@@ -1,5 +1,7 @@
 /*
-  Solution for Reverse String
+  Leetcode.com
+  Problem No: 344
+  Problem: Reverse String
   Author: cpp.rakesh@gmail.com
   Date: Nov 18th, 2016
 */
@@ -28,7 +30,7 @@ int main() {
     Solution s;
     std::string str = "Hansraj Model School, Punjabi Bagh New Delhi, 110076";
     printf("Original String == [%s]\n", str.c_str());
-    printf("Reverse  String == [%s]\n", s.reverseString(str).c_str());    
-    
+    printf("Reverse  String == [%s]\n", s.reverseString(str).c_str());
+
     return 0;
 }
