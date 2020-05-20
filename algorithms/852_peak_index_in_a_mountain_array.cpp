@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Peak index in a mountain array
+  Problem No: 852
+  Problem Peak index in a mountain array
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: 13/08/2019
  */
