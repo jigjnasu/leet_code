@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Binary Number with Alternating Bits
+  Problem No: 762
+  Problem: Prime number of set bits in binary representation
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: 11/03/2018
  */
