@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Self Dividing Numbers
+  Problem No: 728
+  Problem: Self Dividing Numbers
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: 10/03/2018
  */
