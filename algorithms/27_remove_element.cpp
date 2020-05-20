@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for remove element
+  Problem No: 27
+  Problem: Remove element
   Rakesh Kumar @ cpp.rakesh(at)gmail.com
   Date: 12/08/2019
 */
