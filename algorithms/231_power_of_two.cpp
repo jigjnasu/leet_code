@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Power of Two
+  Problem No: 231
+  Problem: Power of Two
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: Nov 18th, 2016
  */
