@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Rotate Array
+  Problem No: 189
+  Problem: Rotate Array
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: 30/03/2018
  */
