@@ -1,5 +1,7 @@
 /*
-  Solution for Single Number from Leet Code
+  Leetcode.com
+  Problem No: 136
+  Problem: Single Number
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: 18th, Nov 2016
  */
@@ -22,6 +24,6 @@ int main() {
     std::vector<int> V(A, A + sizeof(A) / sizeof(A[0]));
 
     printf("Single Number == [%d]\n", s.singleNumber(V));
-    
+
     return 0;
 }
