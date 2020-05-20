@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Unique number of occurrences
+  Problem No: 1207
+  Problem: Unique number of occurrences
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: 03/01/2020
  */
