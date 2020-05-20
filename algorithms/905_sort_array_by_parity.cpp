@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for sort array by parity
+  Problem No: 905
+  Problem: Sort array by parity
   Rakesh Kumar @ cpp.rakesh(at)gmail.com
   Date: 12/08/2019
 */
