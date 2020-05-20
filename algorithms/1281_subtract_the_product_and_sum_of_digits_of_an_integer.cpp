@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Subtract the product and sum of digits of an integer
+  Problem No: 1281
+  Problem: Subtract the product and sum of digits of an integer
   Rakesh Kumar @ cpp.rakesh at gmail.com
   Date: 20/04/2020
 */
