@@ -1,5 +1,7 @@
 /*
-  Solution for Two Sum
+  Leetcode.com
+  Problem No: 1
+  Problem: Two Sum
   Author: cpp.rakesh@gmail.com
   Date: Sep 2nd, 2016
 */
@@ -35,6 +37,6 @@ int main() {
     const int target = 9;
     const std::vector<int> R = s.twoSum(V, target);
     printf("[%d] + [%d] == [%d]\n", R[0], R[1], target);
-    
+
     return 0;
 }
