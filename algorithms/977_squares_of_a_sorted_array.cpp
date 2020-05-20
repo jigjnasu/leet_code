@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Squares of a sorted array
+  Problem No: 977
+  Problem: Squares of a sorted array
   Rakesh Kumar @ cpp.rakesh(at)gmail.com
   Date: 12/08/2019
 */
