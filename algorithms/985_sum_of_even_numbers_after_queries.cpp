@@ -1,6 +1,7 @@
 /*
   LeetCode.com
-  Solution for Sum of even numbers after queries
+  Problem No: 985
+  Problem: Sum of even numbers after queries
   Rakesh Kumar @ cpp.rakesh at gmail.com
   Date: 20/04/2020
 */
