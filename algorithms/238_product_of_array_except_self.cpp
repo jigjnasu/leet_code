@@ -1,5 +1,7 @@
 /*
-  Solution for Product Of Array Except Self from Leet Code
+  Leetcode.com
+  Problem No: 238
+  Problem: Product Of Array Except Self from Leet Code
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: 25th, Nov 2016
  */
@@ -13,7 +15,7 @@ public:
     std::vector<int> productExceptSelf(std::vector<int>& nums) {
         std::vector<int> result;
         result.push_back(1);
-        
+
         for (std::size_t i = 1; i < nums.size(); ++i)
             result.push_back(result[i - 1] * nums[i - 1]);
 
