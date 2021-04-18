@@ -9,10 +9,7 @@
 #include <bits/stdc++.h>
 
 /*
-  every one will play
-  only one winner
-  and at every round there will be eliminating half of the participants
-  therefore there will be n - 1 mathces
+  one winner after n - 1 defeats
  */
 
 class Solution {
