@@ -1,7 +1,7 @@
 /*
   Leetcode.com
-  Problem No : 1290
-  Problem : Convert Binary Number in a Linked List to Integer
+  Problem No : 1561
+  Problem : Maximum Number of Coins You Can Get
   Author : cpp.rakesh@gmail.com
   Date: 24/04/2021
 */
