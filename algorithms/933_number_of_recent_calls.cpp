@@ -11,17 +11,18 @@
 class RecentCounter {
 public:
     RecentCounter() {
-        list.clear();
+        std::queue<int> t;
+        std::swap(q, t);
     }
 
     int ping(int t) {
-        list.push_back(t);
-        while (list.front() < t - 3000)
-            list.pop_front();
-        return static_cast<int>(list.size());
+        q.push(t);
+        while (q.front() < t - 3000)
+            q.pop();
+        return static_cast<int>(q.size());
     }
 
-    std::list<int> list;
+    std::queue<int> q;
 };
 
 int main() {
