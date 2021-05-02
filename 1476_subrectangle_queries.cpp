@@ -1,7 +1,7 @@
 /*
   Leetcode.com
-  Problem No : 1773
-  Problem : Count Items Matching a Rule
+  Problem No : 1476
+  Problem : Subrectangle Queries
   Author : cpp.rakesh@gmail.com
   Date: 02/05/2021
 */
