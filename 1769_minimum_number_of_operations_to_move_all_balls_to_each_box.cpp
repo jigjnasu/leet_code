@@ -8,29 +8,34 @@
 
 #include <bits/stdc++.h>
 
-class Solution {
-public:
-    std::vector<int> minOperations(std::string boxes) {
-        std::vector<int> out(boxes.size(), 0);
-        for (int i = 0; i < static_cast<int>(boxes.size()); ++i) {
-            int c = 0;
-            for (int j = 0; j < static_cast<int>(boxes.size()); ++j) {
-                if (i != j)
-                    if (boxes[j] == '1')
-                        c += std::abs(j - i);
-            }
-            out[i] = c;
-        }
-        return out;
-    }
-};
-
 inline void print(const std::vector<int>& v) {
     printf("----------------------------------------------------\n");
     for (int e : v)
         printf("%d ", e);
     printf("\n----------------------------------------------------\n");
 }
+
+class Solution {
+public:
+    std::vector<int> minOperations(std::string boxes) {
+        int balls = boxes[0] - '0';
+        std::vector<int> left(boxes.size(), 0);
+        for (std::size_t i = 1; i < boxes.size(); ++i) {
+            left[i] = left[i - 1] + balls;
+            balls += boxes[i] - '0';
+        }
+        balls = boxes[boxes.size() - 1] - '0';
+        std::vector<int> right(boxes.size(), 0);
+        for (int i = boxes.size() - 2; i >= 0; --i) {
+            right[i] += right[i + 1] + balls;
+            balls += boxes[i] - '0';
+        }
+        std::vector<int> res(boxes.size(), 0);
+        for (std::size_t i = 0; i < boxes.size(); ++i)
+            res[i] = left[i] + right[i];
+        return res;
+    }
+};
 
 int main() {
     Solution s;
