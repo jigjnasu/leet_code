@@ -49,7 +49,7 @@ public:
         queue.push(root);
         while (!queue.empty()) {
             sum = 0;
-            for (int i = queue.size() - 1; i >= 0; --i) {
+            for (int i = queue.size(); i > 0; --i) {
                 TreeNode* node = queue.front(); queue.pop();
                 sum += node->val;
                 if (node->left) queue.push(node->left);
