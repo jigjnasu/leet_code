@@ -11,16 +11,13 @@
 class Solution {
 public:
     std::vector<std::vector<int>> groupThePeople(std::vector<int>& gs) {
-        std::unordered_map<int, std::vector<int>> dict;
-        for (std::size_t i = 0; i < gs.size(); ++i)
-            dict[gs[i]].emplace_back(i);
         std::vector<std::vector<int>> res;
-        for (const auto& it : dict) {
-            for (std::size_t i = 0; i < it.second.size() / it.first; ++i) {
-                std::vector<int> temp;
-                for (int j = i * it.first; j < it.first * (i + 1); ++j)
-                    temp.emplace_back(it.second[j]);
-                res.emplace_back(temp);
+        std::unordered_map<int, std::vector<int>> dict;
+        for (std::size_t i = 0; i < gs.size(); ++i) {
+            dict[gs[i]].emplace_back(i);
+            if (static_cast<int>(dict[gs[i]].size()) == gs[i]) {
+                res.emplace_back(dict[gs[i]]);
+                dict[gs[i]].clear();
             }
         }
         return res;
