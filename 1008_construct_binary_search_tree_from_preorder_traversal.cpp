@@ -19,31 +19,7 @@ struct TreeNode {
 
 class Solution {
 public:
-    TreeNode* bstFromPreorder(std::vector<int>& preorder) {
-        TreeNode* root = nullptr;
-        for (int e : preorder)
-            root = insert(root, e);
-        return root;
-    }
-
-    void bfs(TreeNode* node) {
-        printf("--------------------------------------------------\n");
-        std::queue<TreeNode*> q;
-        q.push(node);
-        while (!q.empty()) {
-            for (int i = static_cast<int>(q.size()); i > 0; --i) {
-                node = q.front(); q.pop();
-                printf("%d ", node->val);
-                if (node->left) q.push(node->left);
-                if (node->right) q.push(node->right);
-            }
-            printf("\n");
-        }
-        printf("--------------------------------------------------\n");
-    }
-
-private:
-    TreeNode* insert(TreeNode* root, int val) {
+    TreeNode* add(TreeNode* root, int val) {
         if (root == nullptr)
             root = new TreeNode(val);
         else {
@@ -66,15 +42,72 @@ private:
         }
         return root;
     }
+
+    void bfs(TreeNode* node) {
+        printf("-----------------------------------------------------------\n");
+        std::queue<TreeNode*> q;
+        q.push(node);
+        while (!q.empty()) {
+            for (int i = static_cast<int>(q.size()); i > 0; --i) {
+                node = q.front(); q.pop();
+                printf("%d ", node->val);
+                if (node->left) q.push(node->left);
+                if (node->right) q.push(node->right);
+            }
+            printf("\n");
+        }
+        printf("-----------------------------------------------------------\n");
+    }
+
+    void pre_order(TreeNode* node, std::vector<int>& v) {
+        if (node == nullptr)
+            return;
+        v.emplace_back(node->val);
+        pre_order(node->left, v);
+        pre_order(node->right, v);
+    }
+
+    TreeNode* bstFromPreorder(std::vector<int>& preorder, int upper_bound = INT_MAX) {
+        if (iter == static_cast<int>(preorder.size()) || preorder[iter] > upper_bound)
+            return nullptr;
+        TreeNode* root = new TreeNode(preorder[iter++]);
+        root->left = bstFromPreorder(preorder, root->val);
+        root->right = bstFromPreorder(preorder, upper_bound);
+        return root;
+    }
+
+private:
+    int iter = 0;
 };
 
 int main() {
     Solution s;
-    std::vector<int> v1 = {8,5,1,7,10,12};
-    s.bfs(s.bstFromPreorder(v1));
+    TreeNode* root = nullptr;
+    root = s.add(root, 100);
+    root = s.add(root, 50);
+    root = s.add(root, 150);
+    root = s.add(root, 20);
+    root = s.add(root, 140);
+    root = s.add(root, 160);
+    root = s.add(root, 10);
+    root = s.add(root, 5);
+    root = s.add(root, 1);
+    root = s.add(root, 155);
+    root = s.add(root, 152);
+    root = s.add(root, 200);
+    root = s.add(root, 250);
+    root = s.add(root, 300);
+    s.bfs(root);
 
-    std::vector<int> v2 = {1, 3};
-    s.bfs(s.bstFromPreorder(v2));
+    std::vector<int> v;
+    s.pre_order(root, v);
+    printf("-----------------------------------------------------------\n");
+    printf("          pre order traversal\n");
+    for (int e : v)
+        printf("%d ", e);
+    printf("\n-----------------------------------------------------------\n");
+    TreeNode* root_from_pre_order = s.bstFromPreorder(v);
+    s.bfs(root_from_pre_order);
 
     return 0;
 }
