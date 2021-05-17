@@ -35,7 +35,7 @@ public:
         if (v.size() & 1)
             res = v[mid];
         else
-            res = (v[mid] + v[mid - 1]) / static_cast<double>(2);
+            res = (v[mid] + v[mid - 1]) / 2.0f;
         return res;
     }
 };
