@@ -18,25 +18,26 @@ inline void print(const std::vector<int>& v) {
 class Solution {
 public:
     double findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2) {
-        std::vector<int> v(nums1.size() + nums2.size(), 0);
-        std::size_t i = 0, j = 0, k = 0;
-        while (i < nums1.size() && j < nums2.size()) {
-            if (nums1[i] < nums2[j])
-                v[k++] = nums1[i++];
-            else
-                v[k++] = nums2[j++];
+        int m = static_cast<int>(nums1.size()), n = static_cast<int>(nums2.size());
+        if (m > n) {
+            std::swap(m, n); std::swap(nums1, nums2);
         }
-        while (i < nums1.size())
-            v[k++] = nums1[i++];
-        while (j < nums2.size())
-            v[k++] = nums2[j++];
-        double res = 0.0f;
-        const int mid = static_cast<int>(v.size()) >> 1;
-        if (v.size() & 1)
-            res = v[mid];
-        else
-            res = (v[mid] + v[mid - 1]) / 2.0f;
-        return res;
+        int l = 0, r = m;
+        while (l <= r) {
+            int i = (l + r) >> 1, j = ((m + n + 1) >> 1) - i;
+            if (i && nums1[i - 1] > nums2[j]) {
+                r = i - 1;
+            } else if (i < m && nums2[j - 1] > nums1[i]) {
+                l = i + 1;
+            } else {
+                const int lmax = !i ? nums2[j - 1] : (!j ? nums1[i - 1] : std::max(nums1[i - 1], nums2[j - 1]));
+                if ((m + n) & 1)
+                    return lmax;
+                const int rmin = i == m ? nums2[j] : (j == n ? nums1[i] : std::min(nums1[i], nums2[j]));
+                return 0.5 * (lmax + rmin);
+            }
+        }
+        return 0.0f;
     }
 };
 
