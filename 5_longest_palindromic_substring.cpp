@@ -10,6 +10,32 @@
 
 class Solution {
 public:
+    /*
+      Time complexity
+      for this approach we can think of worst case as follows->
+      whole string is a palindrome
+     */
+    std::string longestPalindrome_bf(std::string s) {
+        std::string res;
+        for (std::size_t i = 0; i < s.size(); ++i) {
+            for (std::size_t j = i; j < s.size(); ++j) {
+                if (palindrome(s.substr(i, j-i+1))) {
+                    if (s.substr(i, j-i+1).size() > res.size())
+                        res = s.substr(i, j-i+1);
+                }
+            }
+        }
+        return res;
+    }
+    /*
+      Time complexity
+      for this approach we can think of the worst case as follows->
+      whole string is a palindrome
+      for i = 0 to n - 2:
+          for i = mid to 0, n - 1:
+      therefore O(n^2)
+      Space complexity O(1)
+     */
     std::string longestPalindrome(std::string s) {
         if (s.size() <= 1)
             return s;
@@ -35,15 +61,45 @@ private:
             low = l + 1; high = r - 1;
         }
     }
+
+    bool palindrome(const std::string& s) {
+        int i = 0, j = s.size() - 1;
+        while (i < j)
+            if (s[i++] != s[j--])
+                return false;
+        return true;
+    }
 };
 
-int main() {
+void test() {
     Solution s;
-    printf("%s\n", s.longestPalindrome("rraarrbcdlel").c_str());
-    printf("%s\n", s.longestPalindrome("babad").c_str());
-    printf("%s\n", s.longestPalindrome("cbbd").c_str());
-    printf("%s\n", s.longestPalindrome("a").c_str());
-    printf("%s\n", s.longestPalindrome("ac").c_str());
+    std::string str = "rraarrbcdlel";
+    printf("brute force O(n^3) == [%s]\n", s.longestPalindrome_bf(str).c_str());
+    printf("exapnd      O(n^2) == [%s]\n", s.longestPalindrome(str).c_str());
+
+    str = "babad";
+    printf("brute force O(n^3) == [%s]\n", s.longestPalindrome_bf(str).c_str());
+    printf("exapnd      O(n^2) == [%s]\n", s.longestPalindrome(str).c_str());
+
+    str = "cbbd";
+    printf("brute force O(n^3) == [%s]\n", s.longestPalindrome_bf(str).c_str());
+    printf("exapnd      O(n^2) == [%s]\n", s.longestPalindrome(str).c_str());
+
+    str = "a";
+    printf("brute force O(n^3) == [%s]\n", s.longestPalindrome_bf(str).c_str());
+    printf("exapnd      O(n^2) == [%s]\n", s.longestPalindrome(str).c_str());
+
+    str = "ac";
+    printf("brute force O(n^3) == [%s]\n", s.longestPalindrome_bf(str).c_str());
+    printf("exapnd      O(n^2) == [%s]\n", s.longestPalindrome(str).c_str());
+
+    str = "rakeshracecarkumar";
+    printf("brute force O(n^3) == [%s]\n", s.longestPalindrome_bf(str).c_str());
+    printf("exapnd      O(n^2) == [%s]\n", s.longestPalindrome(str).c_str());
+}
+
+int main() {
+    test();
 
     return 0;
 }
