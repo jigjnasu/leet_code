@@ -14,6 +14,11 @@ public:
       Time complexity
       for this approach we can think of worst case as follows->
       whole string is a palindrome
+      for i 1 to n:
+          for j 1 to n:
+              for i to mid and j = n to mid
+      therefore O(n^3)
+      Space complexity O(1)
      */
     std::string longestPalindrome_bf(std::string s) {
         std::string res;
