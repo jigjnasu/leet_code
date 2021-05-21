@@ -12,20 +12,13 @@ class Solution {
 public:
     std::string intToRoman(int num) {
         std::vector<int> val = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
-        std::unordered_map<int, std::string> dict = {
-            {1, "I"}, {4, "IV"}, {5, "V"},
-            {9, "IX"}, {10, "X"}, {40, "XL"},
-            {50, "L"}, {90, "XC"}, {100, "C"},
-            {400, "CD"}, {500, "D"}, {900, "CM"},
-            {1000, "M"}
-        };
-
+        std::vector<std::string> rom = {"M", "CM" , "D", "CD", "C" , "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
         std::string r;
         std::size_t i = 0;
         while (num > 0) {
             while (num >= val[i]) {
                 num -= val[i];
-                r += dict[val[i]];
+                r += rom[i];
             }
             ++i;
         }
