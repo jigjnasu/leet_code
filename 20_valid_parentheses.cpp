@@ -12,34 +12,26 @@ using namespace std;
 
 class Solution {
 public:
-    bool isValid(string s) {
-        map<char, char> dict;
-        dict[')'] = '(';
-        dict['}'] = '{';
-        dict[']'] = '[';
-
-        stack<char> st;
-        for (size_t i = 0; i < s.size(); ++i) {
-            if (s[i] == '(' ||
-                s[i] == '{' ||
-                s[i] == '[') {
-                st.push(s[i]);
-            } else {
-                if (st.empty())
+    bool isValid(std::string s) {
+        std::stack<char> stack;
+        for (char c : s) {
+            if (c == '(' || c == '[' || c == '{')
+                stack.push(c);
+            else {
+                if (stack.empty())
                     return false;
-
-                const char c = st.top();
-                st.pop();
-
-                if (c != dict[s[i]])
+                const char t = stack.top(); stack.pop();
+                if (c == ')' && t != '(')
+                    return false;
+                if (c == ']' && t != '[')
+                    return false;
+                if (c == '}' && t != '{')
                     return false;
             }
         }
-
-        return st.empty() == true;
+        return stack.empty();
     }
 };
-
 
 int main() {
     Solution s;
