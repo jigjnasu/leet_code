@@ -52,5 +52,8 @@ int main() {
     v = {2,5,2,1,2};
     print(s.combinationSum2(v, 5));
 
+    v = {1,1,2};
+    print(s.combinationSum2(v, 2));
+
     return 0;
 }
