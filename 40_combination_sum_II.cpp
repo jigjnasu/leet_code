@@ -1,7 +1,7 @@
 /*
   LeetCode.com
-  Problem No: 39
-  Problem: Combination Sum
+  Problem No: 40
+  Problem: Combination Sum II
   Rakesh Kumar @ cpp.rakesh at gmail.com
   Date: 20/04/2020
 */
