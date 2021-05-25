@@ -44,7 +44,13 @@ inline void print(const std::vector<std::vector<int>>& vec) {
 
 int main() {
     Solution s;
-    std::vector<int> v = {1,2,3};
+    std::vector<int> v = {1,2};
+    print(s.permute(v));
+
+    v = {1,2,3};
+    print(s.permute(v));
+
+    v = {1,2,3,4,5,6,7,8,9};
     print(s.permute(v));
 
     return 0;
