@@ -10,10 +10,17 @@
 
 class Solution {
 public:
-    std::vector<std::vector<int>> permute(std::vector<int>& nums) {
+    std::vector<std::vector<int>> permute_bt(std::vector<int>& nums) {
         std::vector<std::vector<int>> res;
         std::vector<int> list;
         backtrack(nums, res, list);
+        return res;
+    }
+
+    std::vector<std::vector<int>> permute(std::vector<int>& nums) {
+        std::vector<std::vector<int>> res;
+        std::vector<int> list;
+        permute_rec(nums, res, 0);
         return res;
     }
 
@@ -28,6 +35,18 @@ private:
             list.emplace_back(nums[i]);
             backtrack(nums, res, list);
             list.pop_back();
+        }
+    }
+
+    void permute_rec(std::vector<int>& nums, std::vector<std::vector<int>>& res, int start) {
+        if (start >= nums.size()) {
+            res.emplace_back(nums);
+            return;
+        }
+        for (int i = start; i < static_cast<int>(nums.size()); ++i) {
+            std::swap(nums[i], nums[start]);
+            permute_rec(nums, res, start + 1);
+            std::swap(nums[i], nums[start]);
         }
     }
 };
