@@ -62,15 +62,13 @@ class Solution {
 public:
     int kthSmallest(TreeNode* root, int k) {
         std::stack<TreeNode*> st;
-        st.push(root);
         while (root || !st.empty()) {
             while (root) {
                 st.push(root);
                 root = root->left;
             }
             root = st.top(); st.pop();
-            --k;
-            if (k == 0)
+            if (--k == 0)
                 break;
             root = root->right;
         }
