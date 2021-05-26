@@ -1,7 +1,7 @@
 /*
   LeetCode.com
-  Problem No: 98
-  Problem: Validate Binary Search Tree
+  Problem No: 100
+  Problem : Same tree
   Rakesh Kumar @ cpp.rakesh at gmail.com
   Date: 26/05/2021
 */
