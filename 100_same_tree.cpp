@@ -70,6 +70,23 @@ public:
             return isSameTree(p->left, q->left) && isSameTree(p->right, q->right);
         return false;
     }
+
+    bool isSameTree_iter(TreeNode* p, TreeNode* q) {
+        std::queue<TreeNode*> queue; queue.push(p); queue.push(q);
+        while (!queue.empty()) {
+            q = queue.front(); queue.pop();
+            p = queue.front(); queue.pop();
+            if (p == nullptr && q == nullptr)
+                continue;
+            if (p == nullptr || q == nullptr || p->val != q->val)
+                return false;
+            queue.push(p->left);
+            queue.push(q->left);
+            queue.push(p->right);
+            queue.push(q->right);
+        }
+        return true;
+    }
 };
 
 void test_1() {
@@ -100,7 +117,7 @@ void test_1() {
     q = insert(q, 1);
     bfs(q);
     Solution s;
-    printf("%d\n", s.isSameTree(p, q));
+    printf("%d %d\n", s.isSameTree(p, q), s.isSameTree_iter(p, q));
 }
 
 int main() {
