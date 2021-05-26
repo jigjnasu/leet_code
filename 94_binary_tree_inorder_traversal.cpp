@@ -35,6 +35,21 @@ public:
         }
         return res;
     }
+
+    std::vector<int> inorderTraversal_rec(TreeNode* root) {
+        std::vector<int> res;
+        rec(root, res);
+        return res;
+    }
+
+private:
+    void rec(TreeNode* node, std::vector<int>& res) {
+        if (node == nullptr)
+            return;
+        rec(node->left, res);
+        res.emplace_back(node->val);
+        rec(node->right, res);
+    }
 };
 
 inline void print(const std::vector<int>& v) {
