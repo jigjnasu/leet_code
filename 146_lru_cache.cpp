@@ -16,34 +16,19 @@ public:
         auto it = kv_map.find(key);
         if (it == kv_map.end())
             return -1;
-        list.erase(it_map[key]);
-        list.push_front(key);
-        it_map[key] = list.begin();
+        update(key);
         return kv_map[key];
     }
 
     void put(int key, int value) {
         auto it = kv_map.find(key);
         if (it == kv_map.end()) {
-            if (capacity == static_cast<int>(kv_map.size())) {
-                const int k = list.back();
-                list.erase(it_map[k]);
-                kv_map.erase(k);
-                it_map.erase(k);
-                list.push_front(key);
-                it_map[key] = list.begin();
-                kv_map[key] = value;
-            } else {
-                list.push_front(key);
-                it_map[key] = list.begin();
-                kv_map[key] = value;
-            }
-        } else {
-            kv_map[key] = value;
-            list.erase(it_map[key]);
-            list.push_front(key);
-            it_map[key] = list.begin();
-        }
+            if (capacity == static_cast<int>(kv_map.size()))
+                erase();
+            insert(key);
+        } else
+            update(key);
+        kv_map[key] = value;
     }
 
 private:
@@ -51,6 +36,24 @@ private:
     std::unordered_map<int, std::list<int>::iterator> it_map; // key's position in list
     std::list<int> list;                                      // holding the keys
     int capacity = 0;
+
+    void update(int key) {
+        list.erase(it_map[key]);
+        list.push_front(key);
+        it_map[key] = list.begin();
+    }
+
+    void insert(int key) {
+        list.push_front(key);
+        it_map[key] = list.begin();
+    }
+
+    void erase() {
+        const int k = list.back();
+        list.erase(it_map[k]);
+        kv_map.erase(k);
+        it_map.erase(k);
+    }
 };
 
 int main() {
