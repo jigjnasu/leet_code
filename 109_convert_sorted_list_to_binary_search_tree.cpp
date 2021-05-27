@@ -3,7 +3,7 @@
   Problem No: 109
   Problem: Convert Sorted List to Binary Search Tree
   Author: cpp.rakesh@gmail.com
-  Date: 17/05/2021
+  Date: 27/05/2021
 */
 
 #include <bits/stdc++.h>
@@ -27,42 +27,50 @@ struct TreeNode {
 
 class Solution {
 public:
-    TreeNode* sortedListToBST(ListNode* head) {
-        std::vector<int> v;
-        while (head) {
-            v.emplace_back(head->val);
-            head = head->next;
-        }
-        return build(v, 0, static_cast<int>(v.size()) - 1);
+    TreeNode* sortedListToBST(ListNode* head) {}
+    TreeNode* sortedVectorToBST(const std::vector<int>& v) {
+        return buildFromVec(v, 0, v.size() - 1);
     }
 
-    ListNode* push_back(ListNode* head, int val) {
-        if (head == nullptr)
-            head = new ListNode(val);
-        else {
-            ListNode* node = head;
-            while (node->next)
-                node = node->next;
-            node->next = new ListNode(val);
-        }
-        return head;
+private:
+    TreeNode* buildFromVec(const std::vector<int>& v, int s, int e) {
+        if (s > e)
+            return nullptr;
+        const int mid = (s+e) >> 1;
+        TreeNode* root = new TreeNode(v[mid]);
+        root->left = buildFromVec(v, s, mid-1);
+        root->right = buildFromVec(v, mid+1, e);
+        return root;
     }
+};
 
-    void traverse_list(ListNode* node) {
-        printf("-----------------------------------------------------------------------\n");
-        printf("                        list traversal\n");
-        while (node) {
-            printf("%d ", node->val);
-            node = node->next;
-        }
-        printf("\n-----------------------------------------------------------------------\n");
-    }
+void preorder(TreeNode* node) {
+    if (node == nullptr)
+        return;
+    printf("%d ", node->val);
+    preorder(node->left);
+    preorder(node->right);
+}
 
-    void bfs(TreeNode* node) {
-        if (node == nullptr)
-            return;
-        printf("-----------------------------------------------------------------------\n");
-        printf("                        level order traversal\n");
+void inorder(TreeNode* node) {
+    if (node == nullptr)
+        return;
+    inorder(node->left);
+    printf("%d ", node->val);
+    inorder(node->right);
+}
+
+void postorder(TreeNode* node) {
+    if (node == nullptr)
+        return;
+    postorder(node->left);
+    postorder(node->right);
+    printf("%d ", node->val);
+}
+
+void bfs(TreeNode* node) {
+    printf("-----------------------------------------------\n");
+    if (node) {
         std::queue<TreeNode*> q;
         q.push(node);
         while (!q.empty()) {
@@ -74,28 +82,22 @@ public:
             }
             printf("\n");
         }
-        printf("-----------------------------------------------------------------------\n");
     }
+    printf("\n-----------------------------------------------\n");
+}
 
-private:
-    TreeNode* build(const std::vector<int>& v, int s, int e) {
-        if (s > e)
-            return nullptr;
-        const int mid = (s+e) >> 1;
-        TreeNode* root = new TreeNode(v[mid]);
-        root->left = build(v, s, mid-1);
-        root->right = build(v, mid+1, e);
-        return root;
-    }
-};
+void test_vec() {
+    std::vector<int> v;
+    for (int i = 0; i <= 20; ++i)
+        v.emplace_back(i);
+    Solution s;
+    TreeNode* node = s.sortedVectorToBST(v);
+    inorder(node); printf("\n");
+    bfs(node);
+}
 
 int main() {
-    Solution s;
-    ListNode* head = nullptr;
-    for (int i = 0; i <= 200; i += 10)
-        head = s.push_back(head, i);
-    s.traverse_list(head);
-    s.bfs(s.sortedListToBST(head));
+    test_vec();
 
     return 0;
 }
