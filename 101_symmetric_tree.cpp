@@ -43,6 +43,29 @@ public:
         return symmetric(root->left, root->right);
     }
 
+    bool isSymmetric_iter(TreeNode* root) {
+        if (root == nullptr)
+            return true;
+        std::queue<TreeNode*> queue;
+        queue.push(root->left);
+        queue.push(root->right);
+        while (!queue.empty()) {
+            TreeNode* p = queue.front(); queue.pop();
+            TreeNode* q = queue.front(); queue.pop();
+            if (p == nullptr && q ==nullptr)
+                continue;
+            if (p == nullptr || q == nullptr)
+                return false;
+            if (p->val != q->val)
+                return false;
+            queue.push(p->left);
+            queue.push(q->right);
+            queue.push(p->right);
+            queue.push(q->left);
+        }
+        return true;
+    }
+
 private:
     bool symmetric(TreeNode* p, TreeNode* q) {
         if (p == nullptr && q == nullptr)
@@ -64,7 +87,7 @@ int main() {
     bfs(root);
 
     Solution s;
-    printf("%d\n", s.isSymmetric(root));
+    printf("%d %d\n", s.isSymmetric(root), s.isSymmetric_iter(root));
 
     return 0;
 }
