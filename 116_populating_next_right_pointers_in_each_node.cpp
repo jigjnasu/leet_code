@@ -20,7 +20,7 @@ struct Node {
 
 class Solution {
 public:
-    Node* connect(Node* root) {
+    Node* connect_bfs(Node* root) {
         if (root) {
             Node* node = root;
             std::queue<Node*> q;
@@ -35,6 +35,23 @@ public:
                 }
                 for (std::size_t i = 0; i < v.size() - 1; ++i)
                     v[i]->next = v[i+1];
+            }
+        }
+        return root;
+    }
+
+    Node* connect(Node* root) {
+        if (root) {
+            Node* p = root;
+            while (p->left) {
+                Node* q = p;
+                while (q) {
+                    q->left->next = q->right;
+                    if (q->next)
+                        q->right->next = q->next->left;
+                    q = q->next;
+                }
+                p = p->left;
             }
         }
         return root;
@@ -84,8 +101,10 @@ int main() {
     bfs(root);
 
     Solution s;
-    Node* n1 = s.connect(root);
+    Node* n1 = s.connect_bfs(root);
     traverse(n1);
+    Node* n2 = s.connect(root);
+    traverse(n2);
 
     return 0;
 }
