@@ -27,7 +27,12 @@ struct TreeNode {
 
 class Solution {
 public:
-    TreeNode* sortedListToBST(ListNode* head) {}
+    TreeNode* sortedListToBST(ListNode* head) {
+        if (head == nullptr)
+            return nullptr;
+        return buildFromList(head, nullptr);
+    }
+
     TreeNode* sortedVectorToBST(const std::vector<int>& v) {
         return buildFromVec(v, 0, v.size() - 1);
     }
@@ -42,8 +47,51 @@ private:
         root->right = buildFromVec(v, mid+1, e);
         return root;
     }
+
+    TreeNode* buildFromList(ListNode* head, ListNode* tail) {
+        if (head == tail)
+            return nullptr;
+        ListNode* slow = head;
+        ListNode* fast = head;
+        while (fast != tail && fast->next != tail){
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        TreeNode* root = new TreeNode(slow->val);
+        root->left = buildFromList(head, slow);
+        root->right = buildFromList(slow->next, tail);
+        return root;
+    }
 };
 
+/*
+  List related functions
+ */
+ListNode* push_back(ListNode* head, int val) {
+    if (head == nullptr)
+        head = new ListNode(val);
+    else {
+        ListNode* node = head;
+        while (node->next)
+            node = node->next;
+        node->next = new ListNode(val);
+    }
+    return head;
+}
+
+void traverse(ListNode* head) {
+    ListNode* node = head;
+    printf("----------------------------------------------------\n");
+    while (node) {
+        printf("%d ", node->val);
+        node = node->next;
+    }
+    printf("\n----------------------------------------------------\n");
+}
+
+/*
+  tree related functions
+ */
 void preorder(TreeNode* node) {
     if (node == nullptr)
         return;
@@ -96,8 +144,20 @@ void test_vec() {
     bfs(node);
 }
 
+void test_list() {
+    ListNode* head = nullptr;
+    for (int i = 0; i <= 20; ++i)
+        head = push_back(head, i);
+    traverse(head);
+
+    Solution s;
+    TreeNode* root = s.sortedListToBST(head);
+    bfs(root);
+}
+
 int main() {
-    test_vec();
+    //test_vec();
+    test_list();
 
     return 0;
 }
