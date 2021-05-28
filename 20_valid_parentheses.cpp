@@ -18,15 +18,11 @@ public:
             if (c == '(' || c == '[' || c == '{')
                 stack.push(c);
             else {
-                if (stack.empty())
-                    return false;
+                if (stack.empty()) return false;
                 const char t = stack.top(); stack.pop();
-                if (c == ')' && t != '(')
-                    return false;
-                if (c == ']' && t != '[')
-                    return false;
-                if (c == '}' && t != '{')
-                    return false;
+                if (c == ')' && t != '(') return false;
+                if (c == ']' && t != '[') return false;
+                if (c == '}' && t != '{') return false;
             }
         }
         return stack.empty();
