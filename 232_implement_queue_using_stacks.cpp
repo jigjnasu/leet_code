@@ -1,7 +1,7 @@
 /*
   Leetcode.com
-  Problem No: 225
-  Problem: Implement Stack using Queues
+  Problem No: 232
+  Problem: Implement Queue using Stacks
   Rakesh Kumar @ cpp.rakesh@gmail.com
   Date: 28/05/2021
  */
