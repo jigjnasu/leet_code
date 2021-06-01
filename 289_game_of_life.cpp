@@ -1,7 +1,7 @@
 /*
   LeetCode.com
   Problem No: 289
-  Problem: 289. Game of Life
+  Problem: Game of Life
   Rakesh Kumar @ cpp.rakesh at gmail.com
   Date: 01/06/2021
 */
