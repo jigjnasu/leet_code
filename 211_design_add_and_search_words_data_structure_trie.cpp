@@ -45,7 +45,7 @@ private:
                         found |= find(node->child[j], word.substr(i + 1));
                     if (found) return true;
                 }
-                if (j == 26) return false;
+                if (found == false) return false;
             } else {
                 if (node->child[word[i]-'a'] == nullptr)
                     return false;
