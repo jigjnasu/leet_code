@@ -12,8 +12,8 @@ class Solution {
 public:
     std::vector<std::vector<int>> pacificAtlantic(std::vector<std::vector<int>>& h) {
         std::vector<std::vector<int>> res;
-        int m = static_cast<int>(h.size());
-        int n = static_cast<int>(h[0].size());
+        m = static_cast<int>(h.size());
+        n = static_cast<int>(h[0].size());
         if (m && n) {
             std::vector<std::vector<bool>> pacific(m, std::vector<bool>(n, 0));
             std::vector<std::vector<bool>> atlantic(m, std::vector<bool>(n, 0));
@@ -37,22 +37,23 @@ public:
     }
 
 private:
+    int m = 0;
+    int n = 0;
+
     void dfs(const std::vector<std::vector<int>>& h, std::vector<std::vector<bool>>& visited, int r, int c) {
-        int m = static_cast<int>(h.size());
-        int n = static_cast<int>(h[0].size());
         visited[r][c] = true;
-        // up
-        if (r-1 >= 0 && visited[r-1][c] == false && h[r-1][c] >= h[r][c])
+        if (!out(r-1, c) && !visited[r-1][c] && h[r][c] <= h[r-1][c])
             dfs(h, visited, r-1, c);
-        // down
-        if (r+1 < m && visited[r+1][c] == false && h[r+1][c] >= h[r][c])
+        if (!out(r+1, c) && !visited[r+1][c] && h[r][c] <= h[r+1][c])
             dfs(h, visited, r+1, c);
-        // left
-        if (c-1 >=0 && visited[r][c-1] == false && h[r][c-1] >= h[r][c])
+        if (!out(r, c-1) && !visited[r][c-1] && h[r][c] <= h[r][c-1])
             dfs(h, visited, r, c-1);
-        // righht
-        if (c+1 < n && visited[r][c+1] == false && h[r][c+1] >= h[r][c])
-            dfs(h, visited, r,c+1);
+        if (!out(r, c+1) && !visited[r][c+1] && h[r][c] <= h[r][c+1])
+            dfs(h, visited, r, c+1);
+    }
+
+    bool out(int r, int c) {
+        return r < 0 || c < 0 || r >= m || c >= n;
     }
 };
 
