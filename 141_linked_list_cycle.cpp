@@ -6,36 +6,8 @@
   Date: 07/11/2022
 */
 
+#include "utility/SingleLinkedList.h"
 #include <bits/stdc++.h>
-
-struct ListNode {
-    ListNode(int v) : val(v), next(nullptr) {}
-    ListNode(int v, ListNode* n) : val(v), next(n) {}
-
-    int val = 0;
-    ListNode* next = nullptr;
-};
-
-ListNode* push_back(ListNode* head, int v) {
-    if (head == nullptr) {
-        head = new ListNode(v);
-    } else {
-        ListNode* node = head;
-        while (node->next)
-            node = node->next;
-        node->next = new ListNode(v);
-    }
-    return head;
-}
-
-void traverse(ListNode* head) {
-    ListNode* node = head;
-    while (node) {
-        printf("%d ", node->val);
-        node = node->next;
-    }
-    printf("\n");
-}
 
 class Solution {
 public:
@@ -65,16 +37,18 @@ public:
 };
 
 void test_case_1() {
+    SingleLinkedList ls;
     ListNode* head = nullptr;
     for (int i = 1; i <= 20; ++i)
-        head = push_back(head, i);
-    traverse(head);
+        head = ls.push_back(head, i);
+    ls.traverse(head);
 
     Solution s;
     printf("%d\n", s.hasCycle(head));
 }
 
 void test_case_2() {
+    SingleLinkedList ls;
     ListNode* head = new ListNode(1);
     ListNode* n2 = new ListNode(2);
     ListNode* n3 = new ListNode(3);
@@ -97,7 +71,7 @@ void test_case_2() {
 }
 
 int main() {
-    //test_case_1();
+    test_case_1();
     test_case_2();
 
     return 0;
