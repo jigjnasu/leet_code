@@ -6,37 +6,8 @@
   Date: 23/05/2021
 */
 
+#include "utility/SingleLinkedList.h"
 #include <bits/stdc++.h>
-
-struct ListNode {
-    ListNode() {}
-    ListNode(int val) : val(val) {}
-
-    int val = 0;
-    ListNode* next = nullptr;
-};
-
-ListNode* push_back(ListNode* head, int val) {
-    if (head == nullptr)
-        head = new ListNode(val);
-    else {
-        ListNode* node = head;
-        while (node->next)
-            node = node->next;
-        node->next = new ListNode(val);
-    }
-    return head;
-}
-
-void traverse(ListNode* head) {
-    printf("------------------------------------------------------------------\n");
-    ListNode* node = head;
-    while (node) {
-        printf("%d ", node->val);
-        node = node->next;
-    }
-    printf("\n------------------------------------------------------------------\n");
-}
 
 class Solution {
 public:
@@ -89,15 +60,16 @@ private:
 };
 
 int main() {
+    SingleLinkedList ls;
     ListNode* head1 = nullptr;
     for (int i = 1; i <= 20; ++i)
-        head1 = push_back(head1, i);
+        head1 = ls.push_back(head1, i);
     ListNode* head2 = nullptr;
     for (int i = 2; i <= 20; i += 2)
-        head2 = push_back(head2, i);
+        head2 = ls.push_back(head2, i);
     ListNode* head3 = nullptr;
     for (int i = 1; i <= 20; i += 2)
-        head3 = push_back(head3, i);
+        head3 = ls.push_back(head3, i);
     std::vector<ListNode*> lists;
     lists.emplace_back(head1);
     lists.emplace_back(head2);
@@ -108,7 +80,7 @@ int main() {
     traverse(node1);
     */
     ListNode* node2 = s.mergeKLists(lists);
-    traverse(node2);
+    ls.traverse(node2);
 
     return 0;
 }
