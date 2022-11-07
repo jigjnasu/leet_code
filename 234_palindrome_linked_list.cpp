@@ -12,17 +12,16 @@
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
-        std::vector<int> v;
+        std::string str;
         while (head) {
-            v.push_back(head->val);
+            str.push_back(head->val + '0');
             head = head->next;
         }
         int i = 0;
-        int j = v.size() - 1;
+        int j = str.size() - 1;
         while (i < j)
-            if (v[i++] != v[j--])
+            if (str[i++] != str[j--])
                 return false;
-
         return true;    
     }
 
@@ -41,6 +40,6 @@ void test_case_1() {
 
 int main() {
     test_case_1();
-
+    
     return 0;
 }
