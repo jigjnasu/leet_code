@@ -21,7 +21,7 @@ public:
             head = new ListNode(val);
         } else {
             ListNode* node = new ListNode(val);
-            node->next = head->next;
+            node->next = head;
             head = node;
         }
         return head;
