@@ -4,6 +4,9 @@
     Date: 07/11/2022
 */
 
+#ifndef GIT_HUB_LEET_CODE_UTILITY_SINGLE_LINKED_LIST_H_
+#define GIT_HUB_LEET_CODE_UTILITY_SINGLE_LINKED_LIST_H_
+
 #include <bits/stdc++.h>
 
 struct ListNode {
@@ -49,3 +52,5 @@ public:
         printf("\n------------------------------------------------------------------------------------------------------------------------\n");
     }
 };
+
+#endif //GIT_HUB_LEET_CODE_UTILITY_SINGLE_LINKED_LIST_H_
