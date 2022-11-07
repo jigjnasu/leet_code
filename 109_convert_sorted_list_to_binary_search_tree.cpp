@@ -6,15 +6,8 @@
   Date: 27/05/2021
 */
 
+#include "utility/SingleLinkedList.h"
 #include <bits/stdc++.h>
-
-struct ListNode {
-    ListNode() {}
-    ListNode(int val) : val(val) {}
-
-    int val = 0;
-    ListNode* next = nullptr;
-};
 
 struct TreeNode {
     TreeNode() {}
@@ -63,31 +56,6 @@ private:
         return root;
     }
 };
-
-/*
-  List related functions
- */
-ListNode* push_back(ListNode* head, int val) {
-    if (head == nullptr)
-        head = new ListNode(val);
-    else {
-        ListNode* node = head;
-        while (node->next)
-            node = node->next;
-        node->next = new ListNode(val);
-    }
-    return head;
-}
-
-void traverse(ListNode* head) {
-    ListNode* node = head;
-    printf("----------------------------------------------------\n");
-    while (node) {
-        printf("%d ", node->val);
-        node = node->next;
-    }
-    printf("\n----------------------------------------------------\n");
-}
 
 /*
   tree related functions
@@ -145,10 +113,11 @@ void test_vec() {
 }
 
 void test_list() {
+    SingleLinkedList sl;
     ListNode* head = nullptr;
     for (int i = 0; i <= 20; ++i)
-        head = push_back(head, i);
-    traverse(head);
+        head = sl.push_back(head, i);
+    sl.traverse(head);
 
     Solution s;
     TreeNode* root = s.sortedListToBST(head);
