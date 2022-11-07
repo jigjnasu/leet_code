@@ -51,6 +51,13 @@ public:
         }
         printf("\n------------------------------------------------------------------------------------------------------------------------\n");
     }
+
+    ListNode* convert_to_list(std::vector<int>& v) {
+        ListNode* head = nullptr;
+        for (int& e : v)
+            head = push_back(head, e);
+        return head;
+    }
 };
 
 #endif //GIT_HUB_LEET_CODE_UTILITY_SINGLE_LINKED_LIST_H_
