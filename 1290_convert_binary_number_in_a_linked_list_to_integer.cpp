@@ -6,15 +6,8 @@
   Date: 24/04/2021
 */
 
+#include "utility/SingleLinkedList.h"
 #include <bits/stdc++.h>
-
-struct ListNode {
-    ListNode() {}
-    ListNode(int v) : val(v) {}
-
-    int val = 0;
-    ListNode* next = nullptr;
-};
 
 class Solution {
 public:
@@ -31,38 +24,18 @@ public:
                 r += 1 << (v.size() - 1 - i);
         return r;
     }
-
-    ListNode* push_back(ListNode* head, int val) {
-        if (head == nullptr) {
-            head = new ListNode(val);
-        } else {
-            ListNode* node = head;
-            while (node->next)
-                node = node->next;
-            node->next = new ListNode(val);
-        }
-        return head;
-    }
-
-    void traverse(ListNode* head) {
-        ListNode* node = head;
-        while (node) {
-            printf("%d ", node->val);
-            node = node->next;
-        }
-        printf("\n");
-    }
 };
 
 int main() {
+    SingleLinkedList ls;
     ListNode* head = nullptr;
     Solution s;
-    head = s.push_back(head, 1);
-    head = s.push_back(head, 0);
-    head = s.push_back(head, 0);
-    head = s.push_back(head, 0);
-    head = s.push_back(head, 1);
-    s.traverse(head);
+    head = ls.push_back(head, 1);
+    head = ls.push_back(head, 0);
+    head = ls.push_back(head, 0);
+    head = ls.push_back(head, 0);
+    head = ls.push_back(head, 1);
+    ls.traverse(head);
     printf("%d\n", s.getDecimalValue(head));
 
     return 0;
